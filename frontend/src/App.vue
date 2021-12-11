@@ -7,24 +7,30 @@
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, *:before, *:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+:root {
+  --text: #606262;
+  --black: #333;
+  --black2: #333;
+  --white: #fff;
+  --white2: #fff;
+  --darkBlue: #2c3e50;
+  --bgCursor: #028d0b;
+  --darkGreen: #028d0b;
+  --blueRegular: #0b76ef;
+  --colorText: #778899FF;
+  --darkRed: #8d0000;
+  --colorText2: #495A72;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.active {
-      color: #42b983;
-    }
-  }
+#app{
+  font-family: 'Montserrat', sans-serif;
 }
 </style>
