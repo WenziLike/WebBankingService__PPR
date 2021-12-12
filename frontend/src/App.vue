@@ -30,6 +30,22 @@
   --colorText2: #495A72;
 }
 
+/*============== todo  Input Button*/
+input,
+button,
+fieldset {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 #app{
   font-family: 'Montserrat', sans-serif;
 }
