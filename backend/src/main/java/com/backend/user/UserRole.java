@@ -1,4 +1,4 @@
-package com.backend.registration.user;
+package com.backend.user;
 
 public enum UserRole {
     USER,
