@@ -1,5 +1,6 @@
 package com.backend.user;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,25 +14,26 @@ import java.util.Collections;
 
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class UserEntity implements UserDetails {
 
     @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
+            name = "users_sequence",
+            sequenceName = "users_sequence",
             allocationSize = 1
     )
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
+            generator = "users_sequence"
     )
     private Long id;
     private String firstName;
     private String lastName;
-    private int phoneNumber;
+    private String phoneNumber;
     private String email;
     private String idPerson;
     private String nationality;
@@ -47,7 +49,7 @@ public class UserEntity implements UserDetails {
 
     public UserEntity(String firstName,
                       String lastName,
-                      int phoneNumber,
+                      String phoneNumber,
                       String email,
                       String idPerson,
                       String nationality,
@@ -69,14 +71,6 @@ public class UserEntity implements UserDetails {
         this.userRole = userRole;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         SimpleGrantedAuthority authority =
@@ -92,6 +86,14 @@ public class UserEntity implements UserDetails {
     @Override
     public String getUsername() {
         return email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     @Override
